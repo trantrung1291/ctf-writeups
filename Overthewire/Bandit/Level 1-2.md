@@ -24,8 +24,10 @@ Những khái niệm/lệnh liên quan đến level này:
 - `cd` — dùng để di chuyển giữa các thư mục
 - `ls` — liệt kê file trong thư mục
 - `cat` — đọc nội dung file
-
-> 📚 **Tôi học được gì mới?**  
+- dash line trong tên file.
+  
+> 📚 **Tôi học được gì mới?**
+> 
 > Đối với các file hoặc folder có tên là các ký tự đặc biệt - (dashed line) sử dụng -- hoặc ./ để xử lý
 > ví dụ: cat -- -file hoặc cat ./-file
 ---
@@ -95,8 +97,8 @@ cat ./-
 
 ## 📖 Bài học rút ra (Takeaways)
 
-1.Đọc kỹ đề bài "đã ghi là file - located in home directory"
-2.  
+1. Đọc kỹ đề bài "đã ghi là file - located in home directory"
+2. Tên đặt trong linux sẽ rất đa dạng, như kiểu có space, có -, các ký tự đặc biệt khác nên cần lưu ý. 
 ---
 
 ## 🔗 Tài liệu tham khảo
