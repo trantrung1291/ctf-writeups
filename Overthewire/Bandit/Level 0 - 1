@@ -1,0 +1,103 @@
+# Bandit Level 0 → Level 1
+
+## 📌 Thông tin
+
+| | |
+|---|---|
+| **Nguồn** | [OverTheWire: Bandit](https://overthewire.org/wargames/bandit/bandit1.html) |
+| **Level** | 0 → 1 |
+| **Độ khó** | ⭐☆☆☆☆ |
+| **Ngày giải** | YYYY-MM-DD |
+| **Thời gian** | ~5 phút |
+
+---
+
+## 🎯 Mục tiêu (Goal)
+
+> Trích nguyên văn đề bài từ trang web OverTheWire (bằng tiếng Anh)  
+> Ví dụ: *"The password for the next level is stored in a file called readme located in the home directory."*
+
+---
+
+## 💡 Kiến thức cần có (Concepts)
+
+Những khái niệm/lệnh liên quan đến level này:
+
+- `ssh` — Secure Shell, dùng để kết nối từ xa vào server
+- `ls` — liệt kê file trong thư mục
+- `cat` — đọc nội dung file
+
+> 📚 **Tôi học được gì mới?**  
+> Ghi lại điều BẠN chưa biết trước khi làm level này. Ví dụ: "Lần đầu tôi biết rằng SSH dùng port 2220 thay vì 22 mặc định."
+
+---
+
+## 🔍 Quá trình giải (Walkthrough)
+
+### Bước 1 — Kết nối SSH vào server
+
+```bash
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+# Password: bandit0
+```
+
+**Giải thích:**
+- `bandit0` là username
+- `-p 2220` chỉ định port (OverTheWire dùng port 2220, không phải 22 mặc định)
+
+### Bước 2 — Xem có file gì trong thư mục home
+
+```bash
+ls -la
+```
+
+**Output:**
+```
+total 24
+drwxr-xr-x  2 root    root    4096 Sep 19 07:08 .
+drwxr-xr-x 70 root    root    4096 Sep 19 07:08 ..
+-rw-r--r--  1 root    root     220 Jan  6  2022 .bash_logout
+-rw-r--r--  1 root    root    3526 Jan  6  2022 .bashrc
+-rw-r--r--  1 root    root     675 Jan  6  2022 .profile
+-rw-r-----  1 bandit1 bandit0   33 Sep 19 07:08 readme
+```
+
+**Nhận xét:** File `readme` thuộc sở hữu của `bandit1` nhưng group `bandit0` có quyền đọc (`r--`).
+
+### Bước 3 — Đọc file readme
+
+```bash
+cat readme
+```
+
+**Output:**
+```
+ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+```
+
+---
+
+## 🚩 Password tìm được
+
+```
+ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+```
+
+> ⚠️ **Lưu ý:** Password thay đổi theo thời gian — đừng dựa vào password này, hãy tự giải để lấy password hiện tại.
+
+---
+
+## 📖 Bài học rút ra (Takeaways)
+
+1. **SSH** không phải lúc nào cũng dùng port 22 — luôn kiểm tra port khi kết nối.
+2. **`ls -la`** tốt hơn `ls` vì hiển thị file ẩn và thông tin phân quyền.
+3. Đọc phân quyền file: `rw-r-----` nghĩa là owner đọc/ghi được, group chỉ đọc được, others không làm gì được.
+
+---
+
+## 🔗 Tài liệu tham khảo
+None
+
+---
+
+*Writeup bởi trantrung1291(https://github.com/trantrung1291) · Học cybersecurity từ đầu · [Xem tất cả writeups](../../README.md)*
