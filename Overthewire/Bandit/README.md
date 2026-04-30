@@ -37,4 +37,4 @@ Mỗi khi học được lệnh/khái niệm mới, cập nhật vào đây:
 
 ---
 
-*Made with ☕ by [@alias](https://github.com/alias) · Đà Lạt, Việt Nam*
+*Made with ☕ by trantrung1291(https://github.com/trantrung1291) · Đà Lạt, Việt Nam*
